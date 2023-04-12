@@ -7,7 +7,6 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.time.LocalDate;
 
 @Getter
 @Setter
@@ -15,8 +14,8 @@ import java.time.LocalDate;
 @NoArgsConstructor
 
 @Entity
-@Table(name = "incomes")
-public class Income {
+@Table(name = "transactions")
+public class Transaction {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,11 +23,13 @@ public class Income {
     private Long id;
     private String description;
     private BigDecimal amount;
-    private LocalDate date;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+    @Enumerated(EnumType.STRING)
+    private TransactionType type;
 
 
+    public enum TransactionType {
+        INCOME,
+        EXPENSE
+    }
 }
