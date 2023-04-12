@@ -18,7 +18,12 @@
 
 <header>
     <h1>Personal Finance Manager</h1>
+    <div>
+        <a href="/personal-finance-manager/my-profile" class="button">My profile</a>
+        <a href="/personal-finance-manager/logout" class="button">Log out</a>
+    </div>
 </header>
+
 <div class="container">
     <div class="row">
         <div class="box">

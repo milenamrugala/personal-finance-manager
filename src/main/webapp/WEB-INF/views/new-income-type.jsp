@@ -20,6 +20,10 @@
 
 <header>
     <h1>Personal Finance Manager</h1>
+    <div>
+        <a href="/personal-finance-manager/my-profile" class="button">My profile</a>
+        <a href="/personal-finance-manager/logout" class="button">Log out</a>
+    </div>
 </header>
 
 <form action="" method="POST">
@@ -41,6 +45,8 @@
         <li><a href="/personal-finance-manager/all-income-types">My income types</a></li>
         <li><a href="/personal-finance-manager/new-budget-plan">New budget plan</a></li>
         <li><a href="/personal-finance-manager/all-budget-plans">My budget plans</a></li>
+        <br><br>
+        <li><a href="/personal-finance-manager/list-users">Users</a></li>
     </ul>
 </div>
 

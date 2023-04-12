@@ -1,0 +1,2 @@
+1. To retrieve a BudgetPlan and its associated Transaction.
+SELECT bp FROM BudgetPlan bp LEFT JOIN FETCH bp.transactions WHERE bp.id = :id

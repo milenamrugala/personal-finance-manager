@@ -9,11 +9,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/personal-finance-manager")
 public class HomeController {
 
-    @GetMapping("/registration")
+ /*   @GetMapping("/registration")
 
     public String register() {
+
         return "registration";
-    }
+    }*/
 
     @GetMapping("/login")
 
@@ -30,15 +31,16 @@ public class HomeController {
 
     @GetMapping("/new-expense-type")
 
-    public String newExpenseCategory() {
+    public String newExpenseType() {
         return "new-expense-type";
 
     }
 
     @GetMapping("/new-income-type")
 
-    public String newIncomeCategory() {
+    public String newIncomeType() {
 
         return "new-income-type";
     }
+
 }

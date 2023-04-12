@@ -1,4 +1,4 @@
-package pl.milenamrugala.personalfinancemanager.model;
+package pl.milenamrugala.personalfinancemanager.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,15 +22,11 @@ public class BudgetPlan {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private Long id;
+    private String name;
+    private String description;
 
-    @ManyToMany
-    private List<Expense> expenses = new ArrayList<>();
+    @OneToMany(mappedBy = "budgetPlan", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Transaction> transactions = new ArrayList<>();
 
-    @ManyToMany
-    private List<Income> incomes = new ArrayList<>();
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "month_id", nullable = false)
-    private Month month;
 
 }

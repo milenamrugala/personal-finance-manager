@@ -1,4 +1,4 @@
-package pl.milenamrugala.personalfinancemanager.model;
+package pl.milenamrugala.personalfinancemanager.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -7,7 +7,6 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.time.LocalDate;
 
 @Getter
 @Setter
@@ -15,8 +14,8 @@ import java.time.LocalDate;
 @NoArgsConstructor
 
 @Entity
-@Table(name = "incomes")
-public class Income {
+@Table(name = "transactions")
+public class Transaction {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,11 +23,16 @@ public class Income {
     private Long id;
     private String description;
     private BigDecimal amount;
-    private LocalDate date;
+
+    @Enumerated(EnumType.STRING)
+    private TransactionType type;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+    @JoinColumn(name = "budget_plan_id")
+    private BudgetPlan budgetPlan;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private User user;
 
 }

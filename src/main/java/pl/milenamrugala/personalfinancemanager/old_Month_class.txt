@@ -1,4 +1,4 @@
-package pl.milenamrugala.personalfinancemanager.model;
+package pl.milenamrugala.personalfinancemanager.entity;
 
 
 import lombok.AllArgsConstructor;
