@@ -26,6 +26,7 @@ public class User {
     @Column(unique = true)
     private String email;
     private String password;
+    private String repeatPassword;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Transaction> transactions = new ArrayList<>();

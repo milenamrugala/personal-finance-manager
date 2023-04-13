@@ -37,9 +37,18 @@ public class UserController {
 
     @PostMapping("/registration")
     public String registrationSaveForm(@ModelAttribute("user") User user) {
-        userService.save(user);
+        String result = "registration-error";
+        if (user.getPassword().equals(user.getRepeatPassword())) {
+            try {
+                userService.save(user);
+                result = "registration-success";
 
-        return "redirect:/personal-finance-manager/login";
+            } catch (Exception e) {
+                result = "registration-error";
+
+            }
+        }
+        return result;
     }
 
     @GetMapping("/list-users/update")
@@ -66,7 +75,7 @@ public class UserController {
 
     @GetMapping("/list-users/delete-confirm")
     public String confirmDeleteUser(@RequestParam("id") Long id, Model model) {
-        model.addAttribute("id",id);
+        model.addAttribute("id", id);
         return "user-delete-confirm";
     }
 }

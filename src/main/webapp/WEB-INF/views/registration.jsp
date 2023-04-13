@@ -35,8 +35,8 @@
     <label for="password">Password:</label>
     <input type="password" id="password" name="password" required>
 
-    <label for="repeat-password">Repeat Password:</label>
-    <input type="password" id="repeat-password" name="repeat-password" required>
+    <label for="repeatPassword">Repeat password:</label>
+    <input type="password" id="repeatPassword" name="repeatPassword" required>
 
     <input type="submit" value="Register">
 

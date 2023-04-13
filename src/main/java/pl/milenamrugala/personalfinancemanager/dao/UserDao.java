@@ -1,5 +1,6 @@
 package pl.milenamrugala.personalfinancemanager.dao;
 
+import org.springframework.data.jpa.repository.Query;
 import pl.milenamrugala.personalfinancemanager.entity.User;
 
 import java.util.List;

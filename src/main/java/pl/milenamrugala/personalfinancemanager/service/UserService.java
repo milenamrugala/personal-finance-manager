@@ -1,5 +1,4 @@
 package pl.milenamrugala.personalfinancemanager.service;
-
 import pl.milenamrugala.personalfinancemanager.entity.User;
 
 import java.util.List;
@@ -13,4 +12,5 @@ public interface UserService {
     User save(User user);
 
     void deleteById(Long id);
+
 }

@@ -9,16 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/personal-finance-manager")
 public class HomeController {
 
- /*   @GetMapping("/registration")
-
-    public String register() {
-
-        return "registration";
-    }*/
 
     @GetMapping("/login")
 
     public String login() {
+
         return "login";
     }
 
@@ -41,6 +36,13 @@ public class HomeController {
     public String newIncomeType() {
 
         return "new-income-type";
+    }
+
+    @GetMapping("/")
+
+    public String welcomePage() {
+
+        return "welcome-page";
     }
 
 }

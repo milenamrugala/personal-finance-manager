@@ -1,4 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,27 +19,27 @@
         <a href="/personal-finance-manager/list-users" class="button">Cancel</a>
     </div>
 </header>
-
-<form action="" method="POST">
+<%--@elvariable id="user" type="pl.milenamrugala.personalfinancemanager.entity"--%>
+<form:form action="" method="POST" modelAttribute="user">
     <h2>User Update</h2>
 
-    <label for="firstname">First name:</label>
-    <input type="text" id="firstname" name="firstName" required>
+    <label>First name:</label>
+    <form:input path="firstName"/>
 
-    <label for="lastname">Last name:</label>
-    <input type="text" id="lastname" name="lastName" required>
+    <label>Last name:</label>
+    <form:input path="lastName"/>
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
+    <label>Email:</label>
+    <form:input path="email"/>
 
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required>
+    <label>Password:</label>
+    <form:input path="password"/>
 
-    <label for="repeat-password">Repeat Password:</label>
-    <input type="password" id="repeat-password" name="repeat-password" required>
+    <label>Repeat password:</label>
+    <form:input path="repeatPassword"/>
 
     <input type="submit" value="Update">
 
-</form>
+</form:form>
 </body>
 </html>

@@ -27,6 +27,7 @@
         <th>Last Name</th>
         <th>Email</th>
         <th>Password</th>
+        <th>Repeat password</th>
         <th>Update</th>
         <th>Delete</th>
     </tr>
@@ -39,6 +40,7 @@
             <td><c:out value="${user.lastName}"/></td>
             <td><c:out value="${user.email}"/></td>
             <td><c:out value="${user.password}"/></td>
+            <td><c:out value="${user.repeatPassword}"/></td>
             <td>
                 <a href="/personal-finance-manager/list-users/update?id=${user.id}" class="button">Update</a>
             </td>
