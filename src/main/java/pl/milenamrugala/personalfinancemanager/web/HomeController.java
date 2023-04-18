@@ -10,33 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
 
 
-    @GetMapping("/login")
-
-    public String login() {
-
-        return "login";
-    }
-
-    @GetMapping("/homepage")
-
-    public String homepage() {
-        return "homepage";
-
-    }
-
-    @GetMapping("/new-expense-type")
-
-    public String newExpenseType() {
-        return "new-expense-type";
-
-    }
-
-    @GetMapping("/new-income-type")
-
-    public String newIncomeType() {
-
-        return "new-income-type";
-    }
 
     @GetMapping("/")
 

@@ -27,24 +27,19 @@
 <div class="container">
     <div class="row">
         <div class="box">
-            <a href="/personal-finance-manager/new-expense-type">New expense type</a>
+            <a href="/personal-finance-manager/new-transaction">Add new transaction</a>
         </div>
         <div class="box">
-            <a href="/personal-finance-manager/all-expense-types">My expense types</a>
+            <a href="/personal-finance-manager/list-transactions">View all transactions</a>
         </div>
         <div class="box">
-            <a href="/personal-finance-manager/new-income-type">New income type</a>
-        </div>
-    </div>
-    <div class="row">
-        <div class="box">
-            <a href="/personal-finance-manager/all-income-types">My income types</a>
+            <a href="/personal-finance-manager/new-budget-plan">Add new budget plan</a>
         </div>
         <div class="box">
-            <a href="/personal-finance-manager/new-budget-plan">New budget plan</a>
+            <a href="/personal-finance-manager/list-budget-plans">View all budget plans</a>
         </div>
         <div class="box">
-            <a href="/personal-finance-manager/all-budget-plans">My budget plans</a>
+            <a href="/personal-finance-manager/list-users">View all users</a>
         </div>
     </div>
 </div>

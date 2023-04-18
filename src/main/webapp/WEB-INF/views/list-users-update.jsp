@@ -15,8 +15,8 @@
     <h1>Personal Finance Manager</h1>
     <div>
         <a href="/personal-finance-manager/homepage" class="button">Homepage</a>
-        <a href="/personal-finance-manager/logout" class="button">Log out</a>
         <a href="/personal-finance-manager/list-users" class="button">Cancel</a>
+        <a href="/personal-finance-manager/logout" class="button">Log out</a>
     </div>
 </header>
 <%--@elvariable id="user" type="pl.milenamrugala.personalfinancemanager.entity"--%>

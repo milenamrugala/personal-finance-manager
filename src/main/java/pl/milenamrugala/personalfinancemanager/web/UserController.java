@@ -18,6 +18,7 @@ public class UserController {
 
     @Autowired
     public UserController(UserService userService) {
+
         this.userService = userService;
     }
 
@@ -28,27 +29,9 @@ public class UserController {
         return "list-users";
     }
 
-    @GetMapping("/registration")
-    public String registrationShowForm(Model model) {
-        User user = new User();
-        model.addAttribute("user", user);
-        return "registration";
-    }
-
-    @PostMapping("/registration")
-    public String registrationSaveForm(@ModelAttribute("user") User user) {
-        String result = "registration-error";
-        if (user.getPassword().equals(user.getRepeatPassword())) {
-            try {
-                userService.save(user);
-                result = "registration-success";
-
-            } catch (Exception e) {
-                result = "registration-error";
-
-            }
-        }
-        return result;
+    @GetMapping("/homepage")
+    public String homepageUser() {
+        return "homepage";
     }
 
     @GetMapping("/list-users/update")

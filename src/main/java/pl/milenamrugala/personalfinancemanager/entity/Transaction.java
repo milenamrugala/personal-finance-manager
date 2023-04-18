@@ -1,12 +1,8 @@
 package pl.milenamrugala.personalfinancemanager.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
 
 @Getter
 @Setter
@@ -22,7 +18,7 @@ public class Transaction {
 
     private Long id;
     private String description;
-    private BigDecimal amount;
+    private String category;
 
     @Enumerated(EnumType.STRING)
     private TransactionType type;

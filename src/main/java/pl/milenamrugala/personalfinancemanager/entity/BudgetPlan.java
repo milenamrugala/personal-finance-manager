@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,11 +23,27 @@ public class BudgetPlan {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private Long id;
-    private String name;
+    private double amount;
     private String description;
+    private String name;
+    private Date startDate;
+    private Date endDate;
 
     @OneToMany(mappedBy = "budgetPlan", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Transaction> transactions = new ArrayList<>();
+    private List<Transaction> transactions;
 
+    public List<Transaction> getTransactionsByType(TransactionType type) {
+        List<Transaction> result = new ArrayList<>();
+        for (Transaction transaction : transactions) {
+            if (transaction.getType() == type) {
+                result.add(transaction);
+            }
+        }
+        return result;
+    }
 
+    public void addTransaction(Transaction transaction) {
+
+        transactions.add(transaction);
+    }
 }
