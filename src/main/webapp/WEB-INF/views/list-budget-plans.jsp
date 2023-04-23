@@ -14,10 +14,12 @@
     <title>PFM - Transaction List</title>
 </head>
 <body>
+
 <header>
     <h1>Personal Finance Manager</h1>
     <div>
         <a href="/personal-finance-manager/homepage" class="button">Homepage</a>
+        <a href="/personal-finance-manager/transactions-summary" class="button">Summary</a>
         <a href="/personal-finance-manager/new-transaction" class="button">Add next transaction</a>
         <a href="/personal-finance-manager/logout" class="button">Log out</a>
     </div>
@@ -45,12 +47,12 @@
         <td>Amount:</td>
         <td>${budgetPlan.amount}</td>
     </tr>
-    <%--<tr>
+    <tr>
         <td>Income Transactions:</td>
         <td>
             <ul>
                 <c:forEach var="transaction" items="${budgetPlan.incomeTransactions}">
-                    <li>${transaction.description} - ${transaction.amount}</li>
+                    <li>${transaction.category} - ${transaction.amount}</li>
                 </c:forEach>
             </ul>
         </td>
@@ -60,12 +62,11 @@
         <td>
             <ul>
                 <c:forEach var="transaction" items="${budgetPlan.expenseTransactions}">
-                    <li>${transaction.description} - ${transaction.amount}</li>
+                    <li>${transaction.category} - ${transaction.amount}</li>
                 </c:forEach>
             </ul>
         </td>
-    </tr>--%>
+    </tr>
 </table>
-
 </body>
 </html>

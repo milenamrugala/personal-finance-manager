@@ -38,6 +38,15 @@
         <option value="EXPENSE">Expense</option>
     </select>
     <br><br>
+
+    <label for="amount">Amount:</label>
+    <form:input path="amount"/>
+    <br><br>
+
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date" required><br><br>
+
+
     <input type="submit" value="Submit">
 </form:form>
 

@@ -19,7 +19,11 @@
 <header>
     <h1>Personal Finance Manager</h1>
     <div>
+        <div><%= request.getAttribute("loggedAs") %></div>
         <a href="/personal-finance-manager/my-profile" class="button">My profile</a>
+        <a href="/personal-finance-manager/transactions-summary" class="button">Transactions summary</a>
+        <a href="/personal-finance-manager/savings-summary" class="button">Savings summary</a>
+        <a href="/personal-finance-manager/list-users" class="button">View all users</a>
         <a href="/personal-finance-manager/logout" class="button">Log out</a>
     </div>
 </header>
@@ -32,14 +36,20 @@
         <div class="box">
             <a href="/personal-finance-manager/list-transactions">View all transactions</a>
         </div>
+
+        <div class="box">
+            <a href="/personal-finance-manager/new-saving">Add new savings goal</a>
+        </div>
+        <div class="box">
+            <a href="/personal-finance-manager/list-savings">View all savings goals</a>
+        </div>
+
+
         <div class="box">
             <a href="/personal-finance-manager/new-budget-plan">Add new budget plan</a>
         </div>
         <div class="box">
             <a href="/personal-finance-manager/list-budget-plans">View all budget plans</a>
-        </div>
-        <div class="box">
-            <a href="/personal-finance-manager/list-users">View all users</a>
         </div>
     </div>
 </div>

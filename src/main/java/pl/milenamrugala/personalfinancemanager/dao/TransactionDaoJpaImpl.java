@@ -47,4 +47,5 @@ public class TransactionDaoJpaImpl implements TransactionDao {
         entityManager.remove(transaction);
 
     }
+
 }

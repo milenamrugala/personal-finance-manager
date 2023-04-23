@@ -19,36 +19,33 @@
     <div>
         <a href="/personal-finance-manager/homepage" class="button">Homepage</a>
         <a href="/personal-finance-manager/my-profile" class="button">My profile</a>
+        <a href="/personal-finance-manager/list-savings" class="button">Cancel</a>
         <a href="/personal-finance-manager/logout" class="button">Log out</a>
     </div>
 </header>
 
-<form action="" method="post">
+<%--@elvariable id="saving" type="pl.milenamrugala.personalfinancemanager.entity"--%>
+<form:form action="" method="POST" modelAttribute="saving">
 
-    <label for="category">Transaction category:</label>
-    <input type="text" id="category" name="category" placeholder="e.g. Home, Transport, Health." required>
-
-    <br>
-    <label for="description">Description of transaction (expense or income):</label>
-    <input type="text" id="description" name="description" placeholder="e.g. Fuel bills for Transport category." required>
+    <label for="category">Savings goal category:</label>
+    <form:input path="category"/>
 
     <br>
-    <label for="type">Type:</label>
-    <select id="type" name="type">
-        <option value="INCOME">Income</option>
-        <option value="EXPENSE">Expense</option>
-    </select>
-    <br><br>
+    <label for="description">Description of savings goal:</label>
+    <form:input path="description"/>
 
     <label for="amount">Amount:</label>
-    <input type="number" id="amount" name="amount" placeholder="Here provide amount" required>
+    <form:input path="amount"/>
     <br><br>
 
-    <label for="date">Date:</label>
-    <input type="date" id="date" name="date" required><br><br>
+    <label for="start_date">Start date for savings goal:</label>
+    <input type="date" id="start_date" name="start_date" required><br><br>
+
+    <label for="end_date">End date for savings goal:</label>
+    <input type="date" id="end_date" name="end_date" required><br><br>
 
     <input type="submit" value="Submit">
-</form>
+</form:form>
 
 <div class="sidebar">
     <ul>
@@ -56,7 +53,7 @@
         <li><a href="/personal-finance-manager/list-transactions">View all transactions</a></li>
         <li><a href="/personal-finance-manager/transactions-summary">Transactions summary</a></li>
         <li><a href="/personal-finance-manager/new-saving">Add new savings goal</a></li>
-        <li><a href="/personal-finance-manager/list-savings">View all savings goal</a></li>
+        <li><a href="/personal-finance-manager/list-savings">View all savings goals</a></li>
         <li><a href="/personal-finance-manager/savings-summary">Savings summary</a></li>
         <li><a href="/personal-finance-manager/new-budget-plan">Add new budget plan</a></li>
         <li><a href="/personal-finance-manager/list-budget-plans">View all budget plans</a></li>

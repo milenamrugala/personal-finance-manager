@@ -2,7 +2,6 @@ package pl.milenamrugala.personalfinancemanager.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,7 +31,7 @@ public class BudgetPlanController {
     }
 
     @PostMapping("/new-budget-plan")
-    public String budgetPlanSave(BudgetPlan budgetPlan, BindingResult result, Model model) {
+    public String budgetPlanSave(BudgetPlan budgetPlan, Model model) {
         model.addAttribute("transactions", transactionService.findAll());
         budgetPlanService.save(budgetPlan);
         return "redirect:/personal-finance-manager/list-budget-plans";

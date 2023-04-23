@@ -25,27 +25,22 @@
 
 <form action="" method="post">
 
-    <label for="category">Transaction category:</label>
+    <label for="category">Savings goal category:</label>
     <input type="text" id="category" name="category" placeholder="e.g. Home, Transport, Health." required>
 
     <br>
-    <label for="description">Description of transaction (expense or income):</label>
-    <input type="text" id="description" name="description" placeholder="e.g. Fuel bills for Transport category." required>
-
-    <br>
-    <label for="type">Type:</label>
-    <select id="type" name="type">
-        <option value="INCOME">Income</option>
-        <option value="EXPENSE">Expense</option>
-    </select>
-    <br><br>
+    <label for="description">Description of savings goal:</label>
+    <input type="text" id="description" name="description" placeholder="e.g. New Car for Transport category." required>
 
     <label for="amount">Amount:</label>
     <input type="number" id="amount" name="amount" placeholder="Here provide amount" required>
     <br><br>
 
-    <label for="date">Date:</label>
-    <input type="date" id="date" name="date" required><br><br>
+    <label for="start_date">Start date for savings goal:</label>
+    <input type="date" id="start_date" name="start_date" required><br><br>
+
+    <label for="end_date">End date for savings goal:</label>
+    <input type="date" id="end_date" name="end_date" required><br><br>
 
     <input type="submit" value="Submit">
 </form>

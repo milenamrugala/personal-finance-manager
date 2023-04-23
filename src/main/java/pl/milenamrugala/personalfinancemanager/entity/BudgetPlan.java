@@ -23,7 +23,6 @@ public class BudgetPlan {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private Long id;
-    private double amount;
     private String description;
     private String name;
     private Date startDate;

@@ -48,4 +48,24 @@ public class UserDaoJpaImpl implements UserDao {
 
     }
 
+    @Override
+    public User findByEmail(String email) {
+        TypedQuery<User> query = entityManager.createQuery(
+                "SELECT u FROM User u WHERE u.email = :email", User.class);
+        query.setParameter("email", email);
+        List<User> users = query.getResultList();
+        return users.isEmpty() ? null : users.get(0);
+    }
+
+    public User findByEmailAndPassword(String email, String password) {
+        TypedQuery<User> query = entityManager.createQuery(
+                "SELECT u FROM User u WHERE u.email = :email AND u.password = :password", User.class);
+        query.setParameter("email", email);
+        query.setParameter("password", password);
+        List<User> users = query.getResultList();
+        return users.isEmpty() ? null : users.get(0);
+    }
+
+
+
 }

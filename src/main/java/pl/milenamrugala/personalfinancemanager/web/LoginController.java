@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import pl.milenamrugala.personalfinancemanager.entity.User;
 import pl.milenamrugala.personalfinancemanager.service.UserService;
 
+import javax.servlet.http.HttpSession;
 
 
 @Controller
@@ -37,6 +38,7 @@ public class LoginController {
     public String registrationSaveForm(@ModelAttribute("user") User user) {
         String result = "registration-error";
         if (user.getPassword().equals(user.getRepeatPassword())) {
+
             try {
 
                 String hashedPassword = hashPassword(user.getPassword());
@@ -60,5 +62,36 @@ public class LoginController {
         return "login";
     }
 
+
+    @PostMapping("/login")
+    public String loginAction(@RequestParam("email") String email,
+                              @RequestParam("password") String password,
+                              HttpSession session, Model model) {
+
+        User user = userService.findByEmail(email);
+
+        if (user != null && user.getPassword().equals(password)) {
+            session.setAttribute("email", email);
+
+            String firstName = user.getFirstName();
+            String lastName = user.getLastName();
+            model.addAttribute("loggedAs", "Logged as: " + firstName + " " + lastName);
+
+
+            return "redirect:/personal-finance-manager/homepage";
+        } else {
+
+            model.addAttribute("error", "Invalid email or password");
+        }
+
+        return "/personal-finance-manager/login";
+
+    }
+
+    @GetMapping("/logout")
+    public String logout(HttpSession session) {
+        session.removeAttribute("email");
+        return "redirect:/personal-finance-manager/";
+    }
 }
 

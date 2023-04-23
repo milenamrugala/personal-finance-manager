@@ -36,25 +36,22 @@
     <label for="endDate">End Date:</label>
     <input type="date" id="endDate" name="endDate" required><br><br>
 
-    <label for="incomeTransactions">Income Transactions:</label>
-    <select multiple id="incomeTransactions" name="incomeTransactions">
-        <c:forEach var="transaction" items="${transactions}">
-            <c:if test="${transaction.type == 'INCOME'}">
-                <option value="${transaction.id}">${transaction.description}</option>
-            </c:if>
-        </c:forEach>
-    </select><br><br>
-    <label for="expenseTransactions">Expense Transactions:</label>
-    <select multiple id="expenseTransactions" name="expenseTransactions">
-        <c:forEach var="transaction" items="${transactions}">
-            <c:if test="${transaction.type == 'EXPENSE'}">
-                <option value="${transaction.id}">${transaction.description}</option>
-            </c:if>
-        </c:forEach>
-    </select><br><br>
-
-    <label for="amount">Amount:</label>
-    <input type="number" id="amount" name="amount" required><br><br>
+      <label for="incomeTransactions">Income Transactions:</label>
+      <select multiple id="incomeTransactions" name="incomeTransactions">
+          <c:forEach var="transaction" items="${transactions}">
+              <c:if test="${transaction.type == 'INCOME'}">
+                  <option value="${transaction.id}"> TRANSACTION: ${transaction.description} CATEGORY: ${transaction.category}</option>
+              </c:if>
+          </c:forEach>
+      </select><br><br>
+      <label for="expenseTransactions">Expense Transactions:</label>
+      <select multiple id="expenseTransactions" name="expenseTransactions">
+          <c:forEach var="transaction" items="${transactions}">
+              <c:if test="${transaction.type == 'EXPENSE'}">
+                  <option value="${transaction.id}"> TRANSACTION: ${transaction.description} CATEGORY: ${transaction.category}</option>
+              </c:if>
+          </c:forEach>
+      </select><br><br>
 
     <input type="submit" value="Create New Budget Plan">
 </form>
@@ -63,6 +60,10 @@
     <ul>
         <li><a href="/personal-finance-manager/new-transaction">Add new transaction</a></li>
         <li><a href="/personal-finance-manager/list-transactions">View all transactions</a></li>
+        <li><a href="/personal-finance-manager/transactions-summary">Transactions summary</a></li>
+        <li><a href="/personal-finance-manager/new-saving">Add new savings goal</a></li>
+        <li><a href="/personal-finance-manager/list-savings">View all savings goal</a></li>
+        <li><a href="/personal-finance-manager/savings-summary">Savings summary</a></li>
         <li><a href="/personal-finance-manager/new-budget-plan">Add new budget plan</a></li>
         <li><a href="/personal-finance-manager/list-budget-plans">View all budget plans</a></li>
         <li><a href="/personal-finance-manager/list-users">View all users</a></li>
