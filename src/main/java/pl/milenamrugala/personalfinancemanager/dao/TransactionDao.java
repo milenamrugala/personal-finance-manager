@@ -14,8 +14,11 @@ public interface TransactionDao {
 
     void deleteById(Long id);
 
+    Transaction findByUserIdAndId(Long userId, Long transactionId);
+
+    List<Transaction> findByUserId(Long userId);
 
 
-
+    List<Transaction> findAllByUserId(Long userId);
 }
 

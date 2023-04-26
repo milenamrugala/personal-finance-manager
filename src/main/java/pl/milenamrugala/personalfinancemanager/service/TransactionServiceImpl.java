@@ -45,4 +45,19 @@ public class TransactionServiceImpl implements TransactionService {
 
     }
 
+    @Override
+    public Transaction findByUserIdAndId(Long userId, Long transactionId) {
+        return transactionDao.findByUserIdAndId(userId, transactionId);
+    }
+
+    @Override
+    public List<Transaction> findByUserId(Long userId) {
+        return transactionDao.findByUserId(userId);
+    }
+
+    @Override
+    public List<Transaction> findAllByUserId(Long userId) {
+        return transactionDao.findAllByUserId(userId);
+    }
+
 }

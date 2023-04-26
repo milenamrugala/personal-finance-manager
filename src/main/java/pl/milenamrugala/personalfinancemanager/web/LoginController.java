@@ -6,7 +6,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import pl.milenamrugala.personalfinancemanager.entity.User;
 import pl.milenamrugala.personalfinancemanager.service.UserService;
-
 import javax.servlet.http.HttpSession;
 
 
@@ -70,21 +69,16 @@ public class LoginController {
 
         User user = userService.findByEmail(email);
 
-        if (user != null && user.getPassword().equals(password)) {
+        if (user != null && BCrypt.checkpw(password, user.getPassword())) {
             session.setAttribute("email", email);
-
-            String firstName = user.getFirstName();
-            String lastName = user.getLastName();
-            model.addAttribute("loggedAs", "Logged as: " + firstName + " " + lastName);
-
+           // session.setAttribute("userId", user.getId()); // changed to session
+            session.setAttribute("firstName", user.getFirstName());
+            session.setAttribute("lastName", user.getLastName());
 
             return "redirect:/personal-finance-manager/homepage";
-        } else {
-
-            model.addAttribute("error", "Invalid email or password");
         }
 
-        return "/personal-finance-manager/login";
+        return "redirect:/personal-finance-manager/login-error";
 
     }
 

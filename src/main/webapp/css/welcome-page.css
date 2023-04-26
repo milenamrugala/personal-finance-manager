@@ -1,6 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     font-size: 17px;
+    text-align: -moz-left;
     line-height: 1.5;
     color: #333;
     background-color: #f5f5f5;

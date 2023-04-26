@@ -16,6 +16,7 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     public UserServiceImpl(UserDao userDao) {
+
         this.userDao = userDao;
     }
 
@@ -27,6 +28,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User findById(Long id) {
+
         return userDao.findById(id);
     }
 

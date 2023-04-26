@@ -25,8 +25,9 @@ public class BudgetPlan {
     private Long id;
     private String description;
     private String name;
-    private Date startDate;
-    private Date endDate;
+    private Date start_date;
+    private Date end_date;
+    private double amount;
 
     @OneToMany(mappedBy = "budgetPlan", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Transaction> transactions;

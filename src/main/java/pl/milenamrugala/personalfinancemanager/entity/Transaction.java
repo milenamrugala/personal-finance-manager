@@ -30,8 +30,15 @@ public class Transaction {
     @JoinColumn(name = "budget_plan_id")
     private BudgetPlan budgetPlan;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
+
+    //@NotNull - if session
     private User user;
 
+  /*  public void setUser(User user) {
+        this.user = user;
+    }*/
+
 }
+

@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import pl.milenamrugala.personalfinancemanager.entity.Transaction;
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import java.util.List;
 
@@ -47,5 +48,31 @@ public class TransactionDaoJpaImpl implements TransactionDao {
         entityManager.remove(transaction);
 
     }
+
+    @Override
+    public Transaction findByUserIdAndId(Long userId, Long transactionId) {
+        Query query = entityManager.createQuery("SELECT t FROM Transaction t WHERE t.user.id = :userId AND t.id = :transactionId");
+        query.setParameter("userId", userId);
+        query.setParameter("transactionId", transactionId);
+        return (Transaction) query.getSingleResult();
+    }
+
+    @Override
+    public List<Transaction> findByUserId(Long userId) {
+        Query query = entityManager.createQuery("SELECT t FROM Transaction t WHERE t.user.id = :userId");
+        query.setParameter("userId", userId);
+        return query.getResultList();
+    }
+
+    @Override
+    public List<Transaction> findAllByUserId(Long userId) {
+        TypedQuery<Transaction> theQuery =
+                entityManager.createQuery("from Transaction where user_id = :userId", Transaction.class);
+        theQuery.setParameter("userId", userId);
+
+        List<Transaction> transactions = theQuery.getResultList();
+        return transactions;
+    }
+
 
 }

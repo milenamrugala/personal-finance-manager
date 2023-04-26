@@ -27,4 +27,8 @@ public class Saving {
     private double amount;
     private Date start_date;
     private Date end_date;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id")
+    private User user;
 }

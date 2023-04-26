@@ -37,11 +37,11 @@
     </tr>
     <tr>
         <td>Start Date:</td>
-        <td><fmt:formatDate value="${budgetPlan.startDate}" pattern="yyyy-MM-dd"/></td>
+        <td><fmt:formatDate value="${budgetPlan.start_date}" pattern="yyyy-MM-dd"/></td>
     </tr>
     <tr>
         <td>End Date:</td>
-        <td><fmt:formatDate value="${budgetPlan.endDate}" pattern="yyyy-MM-dd"/></td>
+        <td><fmt:formatDate value="${budgetPlan.end_date}" pattern="yyyy-MM-dd"/></td>
     </tr>
     <tr>
         <td>Amount:</td>

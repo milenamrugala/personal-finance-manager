@@ -17,9 +17,11 @@
 <body>
 
 <header>
-    <h1>Personal Finance Manager</h1>
+    <h1>Personal Finance Manager</h1><br>
     <div>
-        <div><%= request.getAttribute("loggedAs") %></div>
+        <% if (session.getAttribute("email") != null) { %>
+        <h4>Welcome ${sessionScope.firstName} ${sessionScope.lastName}!</h4><br>
+        <% } %>
         <a href="/personal-finance-manager/my-profile" class="button">My profile</a>
         <a href="/personal-finance-manager/transactions-summary" class="button">Transactions summary</a>
         <a href="/personal-finance-manager/savings-summary" class="button">Savings summary</a>

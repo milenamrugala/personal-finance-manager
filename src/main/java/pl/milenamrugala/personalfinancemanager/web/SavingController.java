@@ -5,8 +5,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import pl.milenamrugala.personalfinancemanager.entity.Saving;
-import pl.milenamrugala.personalfinancemanager.entity.Transaction;
-import pl.milenamrugala.personalfinancemanager.entity.TransactionType;
 import pl.milenamrugala.personalfinancemanager.service.SavingService;
 
 import java.util.List;

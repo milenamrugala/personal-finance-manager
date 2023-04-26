@@ -30,11 +30,14 @@
     <label for="description">Description:</label>
     <input type="text" id="description" name="description" placeholder="e.g. Family incomes and expenses in April" required><br>
 
-    <label for="startDate">Start Date:</label>
-    <input type="date" id="startDate" name="startDate" required><br><br>
+    <label for="start_date">Start date:</label>
+    <input type="date" id="start_date" name="start_date" required><br><br>
 
-    <label for="endDate">End Date:</label>
-    <input type="date" id="endDate" name="endDate" required><br><br>
+    <label for="end_date">End date:</label>
+    <input type="date" id="end_date" name="end_date" required><br><br>
+
+    <label for="amount">Amount:</label>
+    <input type="number" id="amount" name="amount" required><br><br>
 
       <label for="incomeTransactions">Income Transactions:</label>
       <select multiple id="incomeTransactions" name="incomeTransactions">
