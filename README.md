@@ -30,3 +30,16 @@ List of savings:
 Summary of transactions:
 
 <img width="1457" alt="summary" src="https://user-images.githubusercontent.com/123079896/236642916-f41b8799-4602-4380-88d5-b69d4143c593.png">
+
+Delete transaction:
+
+<img width="1454" alt="delete" src="https://user-images.githubusercontent.com/123079896/236647765-32764044-b668-43c4-b446-524f4171ee87.png">
+
+Registration failed:
+
+<img width="1457" alt="registration-failed" src="https://user-images.githubusercontent.com/123079896/236647772-e829f24c-28d1-426c-9702-b4b1e832556e.png">
+
+Submission failed:
+
+<img width="1454" alt="submission-failed" src="https://user-images.githubusercontent.com/123079896/236647783-967e5b86-abc0-47b3-a9c8-0297a4c6285a.png">
+
